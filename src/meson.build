@@ -4,6 +4,8 @@ sources = [
   'kprint.rs'
 ]
 
+flags = []
+
 if get_option('qemu').enabled()
   flags += ['--cfg', 'qemu']
 endif
