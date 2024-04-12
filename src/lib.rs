@@ -5,7 +5,7 @@ mod kprint;
 mod uart;
 
 #[no_mangle]
-extern "C" fn kmain() {
+unsafe extern "C" fn kmain() {
     loop {}
 }
 
