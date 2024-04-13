@@ -1,7 +1,7 @@
 ENTRY(start);
- 
+
 . = 0x80000000;
- 
+
 SECTIONS {
 	/* Include entry point at start of binary */
 	.text : ALIGN(4K) {
@@ -14,6 +14,9 @@ SECTIONS {
 		. += 4096;
 		PROVIDE(stack_top = .);
 		. += 4096;
+		PROVIDE(heap_start = .);
+		. += 4M;
+		PROVIDE(heap_end = .);
 		PROVIDE(global_pointer = .);
 		PROVIDE(bss_end = .);
 	}

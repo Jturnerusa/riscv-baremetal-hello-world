@@ -4,6 +4,11 @@
 mod kprint;
 mod uart;
 
+extern "C" {
+    static heap_start: *const ();
+    static heap_end: *const ();
+}
+
 #[no_mangle]
 unsafe extern "C" fn kmain() {
     loop {}
