@@ -10,7 +10,7 @@ extern "C" {
 }
 
 #[no_mangle]
-unsafe extern "C" fn kmain() {
+unsafe extern "C" fn kmain() -> ! {
     loop {}
 }
 
