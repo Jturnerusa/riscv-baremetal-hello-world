@@ -12,11 +12,9 @@ We need to install the toolchain /with/ c++, so let's create the package.use fil
 crossdev --init-target riscv64-unknown-none-elf
 #+end_src
 
-Make sure we have the cxx use flag enabled:
+Make sure we have the cxx use flag enabled by removing any instance of /-cxx/ from the use flags file:
 #+begin_src bash
-vim /etc/portage/package.use/cross-riscv64-unknown-none-elf
-:%s/-cxx//g
-:wq
+sed -i 's|[-cxx]||g' /etc/portage/package.use/cross-riscv64-unknown-none-elf
 #+end_src
 
 Next we will compile the riscv64-unknown-none-elf stage 4. This will compile the C++ compiler as well.
